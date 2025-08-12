@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,13 +27,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Analytics />
         <nav className="navbar">
           <div className="container">
-            <Link href="/" className="logo">Cody Averett</Link>
+            <Link href="/" className="logo">
+              Cody Averett
+            </Link>
             <ul className="nav-links">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
-              <li><Link href="/portfolio">Portfolio</Link></li>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link href="/portfolio">Portfolio</Link>
+              </li>
             </ul>
           </div>
         </nav>
